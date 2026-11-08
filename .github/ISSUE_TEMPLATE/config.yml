@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Como escrever tarefas
+    url: https://github.com/hunter-oficina/docs-for-devs/blob/main/como-escrever-tarefas.md
+    about: Tipos, títulos e descrição de uma issue do Hunter.

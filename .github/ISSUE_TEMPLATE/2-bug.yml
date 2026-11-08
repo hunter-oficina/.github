@@ -1,0 +1,69 @@
+name: Bug
+description: Algo que deveria funcionar, mas não funciona como esperado.
+type: Bug
+projects: ["hunter-oficina/1"]
+body:
+  - type: markdown
+    attributes:
+      value: "Título: o que está errado, e não a correção. Exemplo, \"Total do orçamento ignora o desconto do serviço\". Use dados de teste nos passos."
+  - type: textarea
+    id: aconteceu
+    attributes:
+      label: O que acontece
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: O que o usuário esperava
+    validations:
+      required: true
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+      placeholder: "1. No menu ..., clique em ..."
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Critérios de aceite
+      description: Em EARS. "Quando...", "Se..., então...".
+  - type: textarea
+    id: solucao
+    attributes:
+      label: Solução proposta
+      description: Pode ser preenchida na investigação.
+  - type: dropdown
+    id: origem
+    attributes:
+      label: Origem
+      options:
+        - Suporte
+        - Solicitação nova
+    validations:
+      required: true
+  - type: dropdown
+    id: criticidade
+    attributes:
+      label: Criticidade
+      description: "Crítica: operação parada ou risco de perda de dados, segurança ou faturamento, sem alternativa. Alta: parte importante parada, alternativa limitada. Baixa: impacto pequeno ou com alternativa simples."
+      options:
+        - Crítica
+        - Alta
+        - Baixa
+    validations:
+      required: true
+  - type: input
+    id: chamado
+    attributes:
+      label: Chamado de suporte
+      description: Só o número, se vier do suporte. Exemplo, Chamado #1234.
+  - type: checkboxes
+    id: privacidade
+    attributes:
+      label: Dados de cliente
+      options:
+        - label: Esta issue não tem nome, placa, CPF, CNPJ, telefone, e-mail nem print com dados de cliente.
+          required: true

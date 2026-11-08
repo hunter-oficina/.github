@@ -1,0 +1,61 @@
+name: Tarefa
+description: Trabalho técnico, operacional ou de manutenção. Também é o tipo das sub-issues, uma por pull request.
+type: Tarefa
+projects: ["hunter-oficina/1"]
+body:
+  - type: markdown
+    attributes:
+      value: "Título: verbo no imperativo. Exemplo, \"Atualizar imagem Docker do hunter\". Numa sub-issue, a motivação diz qual História ela completa."
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Motivação e contexto
+    validations:
+      required: true
+  - type: textarea
+    id: fora
+    attributes:
+      label: Fora do escopo
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Critérios de aceite
+      description: Em EARS.
+    validations:
+      required: true
+  - type: textarea
+    id: solucao
+    attributes:
+      label: Solução proposta
+  - type: dropdown
+    id: origem
+    attributes:
+      label: Origem
+      options:
+        - Suporte
+        - Solicitação nova
+    validations:
+      required: true
+  - type: dropdown
+    id: criticidade
+    attributes:
+      label: Criticidade
+      description: "Crítica: operação parada ou risco de perda de dados, segurança ou faturamento, sem alternativa. Alta: parte importante parada, alternativa limitada. Baixa: impacto pequeno ou com alternativa simples."
+      options:
+        - Crítica
+        - Alta
+        - Baixa
+    validations:
+      required: true
+  - type: input
+    id: chamado
+    attributes:
+      label: Chamado de suporte
+      description: Só o número, se vier do suporte. Exemplo, Chamado #1234.
+  - type: checkboxes
+    id: privacidade
+    attributes:
+      label: Dados de cliente
+      options:
+        - label: Esta issue não tem nome, placa, CPF, CNPJ, telefone, e-mail nem print com dados de cliente.
+          required: true

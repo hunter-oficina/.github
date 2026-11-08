@@ -1,0 +1,76 @@
+name: História
+description: Necessidade nova, contada por quem tem o problema.
+type: História
+projects: ["hunter-oficina/1"]
+body:
+  - type: markdown
+    attributes:
+      value: "Título: quem consegue fazer o quê, em até 70 caracteres. Exemplo, \"Oficina acompanha o status da O.S. pelo celular\". Veja [Como escrever tarefas](https://github.com/hunter-oficina/docs-for-devs/blob/main/como-escrever-tarefas.md)."
+  - type: input
+    id: frase
+    attributes:
+      label: História
+      placeholder: Como <quem>, quero <o quê>, para <por quê>.
+    validations:
+      required: true
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Motivação e contexto
+    validations:
+      required: true
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema
+    validations:
+      required: true
+  - type: textarea
+    id: fora
+    attributes:
+      label: Fora do escopo
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Critérios de aceite
+      description: Em EARS. "Quando...", "Enquanto...", "Se..., então...".
+      placeholder: "1. Quando <gatilho>, o sistema deve <resposta>."
+    validations:
+      required: true
+  - type: textarea
+    id: solucao
+    attributes:
+      label: Solução proposta
+      description: Pode ser preenchida no refinamento.
+  - type: dropdown
+    id: origem
+    attributes:
+      label: Origem
+      options:
+        - Suporte
+        - Solicitação nova
+    validations:
+      required: true
+  - type: dropdown
+    id: criticidade
+    attributes:
+      label: Criticidade
+      description: "Crítica: operação parada ou risco de perda de dados, segurança ou faturamento, sem alternativa. Alta: parte importante parada, alternativa limitada. Baixa: impacto pequeno ou com alternativa simples."
+      options:
+        - Crítica
+        - Alta
+        - Baixa
+    validations:
+      required: true
+  - type: input
+    id: chamado
+    attributes:
+      label: Chamado de suporte
+      description: Só o número, se vier do suporte. Exemplo, Chamado #1234.
+  - type: checkboxes
+    id: privacidade
+    attributes:
+      label: Dados de cliente
+      options:
+        - label: Esta issue não tem nome, placa, CPF, CNPJ, telefone, e-mail nem print com dados de cliente.
+          required: true
